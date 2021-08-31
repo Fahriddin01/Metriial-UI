@@ -25,8 +25,8 @@ function Comment(props) {
       multiline
       rows={4}
       rowsMax={8}
-      inputProps={{ style: { fontSize: 20 } }} // font size of input text
-      InputLabelProps={{ style: { fontSize: 20 } }} // font size of input label
+      style={{fontSize:'20px' } } // font size of input text
+      style= {{ fontSize:'20px' }} // font size of input label
     />
   );
 }

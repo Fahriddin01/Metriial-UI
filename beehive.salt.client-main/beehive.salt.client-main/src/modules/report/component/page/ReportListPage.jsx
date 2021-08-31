@@ -124,6 +124,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
+    maxWidth:'350px',
+    marginLeft:'auto',
     [theme.breakpoints.down('sm')]: {
       width: '184px',
    
@@ -160,6 +162,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paper: {
+    
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
      
@@ -395,19 +398,20 @@ export default function ResponsiveDrawer(props) {
     <Box className={classes.repRow}>
       <Grid xs={12} container alignItems="center" spacing={2}>
       <CssBaseline />
-      <Grid item xs={12}>
-        <div className={classes.paper}>
+      <Grid item xs={12} >
+        <div className={classes.paper} >
           <Grid
             xs={12}
             sm={12}
             style={{
               height: '468px',
               width: '100%',
+              marginTop:'20px',
             }}
           >
             <Toolbar className={classes.toolbar}>
               <Hidden only={['md', 'lg', 'xl']}>
-                <Grid container>
+                <Grid container justifyContent='space-between'>
                   <Grid item xs={6}>
                     <Button
                       className={classes.fltrSm}
@@ -429,7 +433,7 @@ export default function ResponsiveDrawer(props) {
                       />
                     ) : null}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12} style={{display:'flex',justifyContent:'justify-content'}}>
                     <div>
                       {(user.role === 'client' || user.role === 'clientAdmin') && (
                         <Button
@@ -444,7 +448,21 @@ export default function ResponsiveDrawer(props) {
                         </Button>
                       )}
                     </div>
+                    <Grid item xs={3} sm={3} md={3} lg={6}>
+                      {/* <Hidden only={['sm', 'xs']}> */}
+                      <Button
+                        className={classes.btnColor}
+                        variant="contained"
+                        color="primary"
+                        startIcon={<GetAppIcon fontSize="inherit" />}
+                        onClick={(e) => exportToCSV(reports, ExportedFile)}
+                      >
+                        Экспорт
+                      </Button>
+                      {/* </Hidden> */}
+                    </Grid>
                   </Grid>
+                  
                 </Grid>
               </Hidden>
               <Hidden only={['sm', 'xs']}>
@@ -469,7 +487,7 @@ export default function ResponsiveDrawer(props) {
                     />
                   ) : null}
 
-                  <Grid container className={classes.btn} spacing={4}>
+                  <Grid container className={classes.btn} spacing={4} maxWidth='500px'>
                     <Grid item xs={6} sm={6} md={6} lg={6}>
                       {(user.role === 'client' || user.role === 'clientAdmin') && (
                         <Button
@@ -484,7 +502,19 @@ export default function ResponsiveDrawer(props) {
                         </Button>
                       )}
                     </Grid>
-                    
+                      <Grid item xs={3} sm={3} md={3} lg={6}>
+                      {/* <Hidden only={['sm', 'xs']}> */}
+                      <Button
+                        className={classes.btnColor}
+                        variant="contained"
+                        color="primary"
+                        startIcon={<GetAppIcon fontSize="inherit" />}
+                        onClick={(e) => exportToCSV(reports, ExportedFile)}
+                      >
+                        Экспорт
+                      </Button>
+                      {/* </Hidden> */}
+                    </Grid>
                   </Grid>
                 </Grid>
               </Hidden>
@@ -514,21 +544,6 @@ export default function ResponsiveDrawer(props) {
         <Redirect to="/" />
       ) : null}
     </Grid>
-    <div className={classes.exBtRow} >
-           <Grid item xs={3} sm={3} md={3} lg={3}>
-                      {/* <Hidden only={['sm', 'xs']}> */}
-                      <Button
-                        className={classes.btnColor}
-                        variant="contained"
-                        color="primary"
-                        startIcon={<GetAppIcon fontSize="inherit" />}
-                        onClick={(e) => exportToCSV(reports, ExportedFile)}
-                      >
-                        Экспорт
-                      </Button>
-                      {/* </Hidden> */}
-                    </Grid>
-    </div>
    
     </Box>
    

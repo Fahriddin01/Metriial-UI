@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     
     display: 'flex',
     flexDirection: 'column',
-    minHeight:'300px',
+    minHeight:'320px',
     width:'100%',
   },
   RCrad: {
@@ -217,7 +217,7 @@ export default function ComplainViewPage() {
           </div>
           <Grid container spacing={10} style={{margin:'0px',
           width:'100%',
-          justifyContent:'space-around',
+          justifyContent:'start',
           paddingTop:'30px'}}>
             <Grid item xs={12} sm={4} md={4} lg={4} style={{padding:'0px',margin:'15px'}}  className={classes.RCrad}>
               {' '}

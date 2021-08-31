@@ -99,6 +99,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
+    width:'40%',
+    marginRight:'0px',
+    justifyContent:'flex-end',
+    marginLeft:'auto',
     [theme.breakpoints.down('sm')]: {
       width: '184px',
    
@@ -108,6 +112,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbar: {
+    marginBottom:'15px',
     [theme.breakpoints.down('md')]: {
     
     },
@@ -229,7 +234,7 @@ export default function ComplainListPage() {
   // -- render --
   return (
     <Box className={classes.cRow}>
-           <Grid xs={12} container alignItems="center" spacing={2}>
+      <Grid xs={12} container alignItems="center" spacing={2}>
       <CssBaseline />
       <Grid item xs={12}>
         <div className={classes.paper}>

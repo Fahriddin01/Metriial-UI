@@ -30,17 +30,23 @@ const FileScreenModalLoadable = React.lazy(() =>
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '80vh',
+    paddingLeft:'70px',
+    justifyContent:'space-between',
+     [theme.breakpoints.down('lg')]: {
+      paddingLeft:'20px',
+    },
     // position: 'fixed',
     // width: '50hw',
     // margin: theme.spacing(8, 1, 1, 10),
   },
   image: {
-    [theme.breakpoints.up('lg')]: {
+    paddingTop:'50px',
+    maxWidth:'430px',
+    [theme.breakpoints.down('lg')]: {
       flexDirection: 'column',
-   
-      right: '160px',
-      top: '230px',
-      width: '20%',
+      maxWidth:'95%',
+      textAlign:'center',
+     
       // right: '160px',
     },
     [theme.breakpoints.down('md')]: {
@@ -51,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex',
     width: '96%',
-    margin: theme.spacing(1, 2, 1, -27),
+   
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(1, 1, 2, 1),
     },
@@ -77,14 +83,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paper1: {
+    maxWidth: '730px',
     [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(1, 1, 2, 1),
-      width: '90%',
+    
     },
-
-    margin: theme.spacing(9, 20, 1, -28),
-    width: '730px',
-
+  
+     [theme.breakpoints.down('lg')]: {
+        maxWidth: '100%',
+     // right: '160px',
+    },
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -368,11 +375,11 @@ export default function ReportAddEditForm() {
       <Grid container column className={classes.root}>
         <CssBaseline />
 
-        <Grid item xs={12} sm={10} md={6}>
+        <Grid item xs={12} sm={12} md={6}>
           <div>
             {report.activity === 'sale' && (
               <div className={classes.paper1}>
-                <Grid item xs={12} sm={10} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   {' '}
                   <Controls.Button
                     style={{ marginLeft: '10px' }}
@@ -386,7 +393,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Kлиент"
                       name="client"
@@ -395,7 +402,7 @@ export default function ReportAddEditForm() {
                       error={errors.client}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}  style={{fontSize:'20px'}}>
                     <Controls.Select
                       name="saltCategoryOut"
                       label="&nbsp;&nbsp;*Категории Соли (на выходе)"
@@ -407,7 +414,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Номер Партии (на выходе)"
                       type="number"
@@ -418,7 +425,7 @@ export default function ReportAddEditForm() {
                       error={errors.batchNumberOut}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Номер Накладной"
                       name="invoiceNumber"
@@ -429,7 +436,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={10} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   {' '}
                   <Controls.Comment
                     label="*Введите Сообщение"
@@ -444,7 +451,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Общий Объем (на выходе)"
                       type="number"
@@ -455,7 +462,7 @@ export default function ReportAddEditForm() {
                       error={errors.totalVolumeOut}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="measureOut"
                       label="&nbsp;&nbsp;*Тонн"
@@ -470,7 +477,7 @@ export default function ReportAddEditForm() {
             )}
             {report.activity === 'mining' && (
               <div className={classes.paper1}>
-                <Grid item xs={12} sm={10} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   <Controls.Button
                     style={{ marginLeft: '10px' }}
                     variant="outlined"
@@ -483,7 +490,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="saltCategoryOut"
                       label="&nbsp;&nbsp;*Категории Соли (на выходе)"
@@ -493,7 +500,7 @@ export default function ReportAddEditForm() {
                       error={errors.saltCategoryOut}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Номер Партии (на выходе)"
                       type="number"
@@ -506,7 +513,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={10} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   {' '}
                   <Controls.Comment
                     label="*Введите
@@ -523,7 +530,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Общий Объем (на выходе)"
                       type="number"
@@ -534,7 +541,7 @@ export default function ReportAddEditForm() {
                       error={errors.totalVolumeOut}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="measureOut"
                       label="&nbsp;&nbsp;*Тонн"
@@ -575,7 +582,7 @@ export default function ReportAddEditForm() {
                   ('processing' && (
                     <div>
                       <Grid container spacing={1}>
-                        <Grid item xs={12} sm={10} md={6}>
+                        <Grid item xs={12} sm={12} md={6}>
                           <Controls.Input
                             label="*Калий Йодат"
                             name="potassiumIodate"
@@ -585,7 +592,7 @@ export default function ReportAddEditForm() {
                             error={errors.potassiumIodate}
                           />
                         </Grid>
-                        <Grid item xs={12} sm={10} md={6}>
+                        <Grid item xs={12} sm={12} md={6}>
                           <Controls.Select
                             name="potassiumIodateMeasure"
                             label="&nbsp;&nbsp;*Тонн"
@@ -598,7 +605,7 @@ export default function ReportAddEditForm() {
                       </Grid>
                     </div>
                   ))}
-                <Grid item xs={12} sm={10} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   <Controls.Comment
                     label="*Введите
                  Сообщение"
@@ -614,7 +621,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Номер Партии (поступление)"
                       type="number"
@@ -625,7 +632,7 @@ export default function ReportAddEditForm() {
                       error={errors.batchNumberIn}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="saltCategoryIn"
                       label="&nbsp;&nbsp;*Категории Соли (поступление)"
@@ -637,7 +644,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Общий Объем (поступление)"
                       type="number"
@@ -648,7 +655,7 @@ export default function ReportAddEditForm() {
                       error={errors.totalVolumeIn}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="measureIn"
                       label="&nbsp;&nbsp;*Тонн"
@@ -660,7 +667,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     {' '}
                     <Controls.Select
                       name="processing"
@@ -671,7 +678,7 @@ export default function ReportAddEditForm() {
                       error={errors.processing}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     {' '}
                     <Controls.Select
                       name="saltCategoryOut"
@@ -684,7 +691,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Input
                       label="*Общий Объем (на выходе)"
                       type="number"
@@ -695,7 +702,7 @@ export default function ReportAddEditForm() {
                       error={errors.totalVolumeOut}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="measureOut"
                       label="&nbsp;&nbsp;*Тонн"
@@ -707,7 +714,7 @@ export default function ReportAddEditForm() {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     {' '}
                     <Controls.Input
                       label="*Номер Партии (на выходе)"
@@ -719,7 +726,7 @@ export default function ReportAddEditForm() {
                       error={errors.batchNumberOut}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     {' '}
                     <Controls.Select
                       name="action"
@@ -733,7 +740,7 @@ export default function ReportAddEditForm() {
                 </Grid>
 
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <Controls.Select
                       name="iodineСoncentration"
                       label="&nbsp;&nbsp;*Концентрация Йода"
@@ -743,7 +750,7 @@ export default function ReportAddEditForm() {
                       error={errors.iodineСoncentration}
                     />{' '}
                   </Grid>
-                  <Grid item xs={12} sm={10} md={6}>
+                  <Grid item xs={12} sm={12} md={6}>
                     {' '}
                     <Controls.Input
                       label="*Лабораторные Результаты"
@@ -805,7 +812,7 @@ export default function ReportAddEditForm() {
               </div>
             )}
             <Grid container spacing={0} className={classes.btn}>
-              <Grid item xs={6} sm={6} md={4} lg={4}>
+              <Grid item xs={6} sm={4} md={4} lg={4}>
                 {' '}
                 {id ? (
                   <>
@@ -847,7 +854,7 @@ export default function ReportAddEditForm() {
                   </Controls.Button>
                 )}
               </Grid>
-              <Grid item xs={6} sm={6} md={4} lg={4}>
+              <Grid item xs={6} sm={4} md={4} lg={4}>
                 <Controls.Button
                   className={classes.btnColor1}
                   startIcon={<ClearIcon fontSize="small" />}
@@ -862,7 +869,7 @@ export default function ReportAddEditForm() {
           </div>
         </Grid>
         <Hidden only="xs">
-          <Grid item xs={12} sm={12} md={5} className={classes.image}>
+          <Grid item xs={12} sm={12} md={4} className={classes.image}>
             <Typography>
               На этой странице вы можете изменить свое имя, фамилию и пароль. Для
               изменения, нажмите "Изменить", введите необходимые данные и нажмите

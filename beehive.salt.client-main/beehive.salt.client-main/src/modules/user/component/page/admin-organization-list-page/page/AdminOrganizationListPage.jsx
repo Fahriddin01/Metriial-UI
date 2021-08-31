@@ -70,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbar: {
+    marginTop:'30px',
+    marginBottom:'30px',
     [theme.breakpoints.down('md')]: {
       width: '100%',
      
@@ -89,14 +91,13 @@ const useStyles = makeStyles((theme) => ({
   },
   fltrSm: {
     [theme.breakpoints.down('sm')]: {
-      width: '10%',
-      margin: theme.spacing(-5.5, -1, -11, 4),
+  
     },
   },
   btn: {
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-      margin: theme.spacing(1, -1, 1, 22),
+   
     },
     [theme.breakpoints.up('lg')]: {
       margin: theme.spacing(-3, 1, 1, 1),
@@ -226,7 +227,7 @@ export default function AdminOrganizationListPage() {
           >
             <Toolbar className={classes.toolbar}>
               <Hidden only={['md', 'lg', 'xl']}>
-                <Grid container>
+                <Grid container alignItems="center">
                   <Grid item xs={6}>
                     <Button
                       className={classes.fltrSm}
@@ -247,10 +248,29 @@ export default function AdminOrganizationListPage() {
                       />
                     ) : null}
                   </Grid>
+                  <Grid>
+                  <div style={{maxWidth:'1290px',marginTop:'30px'}}>
+                     {(user.role === 'mainAdmin' ||
+                    user.role === 'supervisorAdmin') && (
+                    <div>
+                    <Button
+                    className={classes.btnSm}
+                    variant="contained"
+                    color="primary"
+                    startIcon={<AddCircleOutlineIcon fontSize="small" />}
+                    component={Link}
+                    to="/organizations/add"
+                    >
+                    Добавить
+                  </Button>
+                </div>
+              )}
+          </div>
+      </Grid>
                  
                 </Grid>
               </Hidden>
-              <Hidden only={['sm', 'xs']}>
+              <Hidden only={['sm', 'xs']} >
                 <Grid container spacing={1} xs={12}>
                   <Button
                     className={classes.fltrSm}
@@ -272,6 +292,25 @@ export default function AdminOrganizationListPage() {
                   ) : null}
 
                 </Grid>
+                <Grid>
+                <div style={{maxWidth:'1290px'}}>
+                    {(user.role === 'mainAdmin' ||
+                    user.role === 'supervisorAdmin') && (
+                  <div>
+                    <Button
+                    className={classes.btnSm}
+                    variant="contained"
+                    color="primary"
+                    startIcon={<AddCircleOutlineIcon fontSize="small" />}
+                    component={Link}
+                    to="/organizations/add"
+                    >
+                    Добавить
+                  </Button>
+                 </div>
+                       )}
+                  </div>
+              </Grid>
               </Hidden>
             </Toolbar>
 
@@ -307,25 +346,7 @@ export default function AdminOrganizationListPage() {
     </Box>
     
    <div>
-      <Grid>
-        <div style={{maxWidth:'1290px',marginTop:'30px'}}>
-              {(user.role === 'mainAdmin' ||
-                    user.role === 'supervisorAdmin') && (
-                <div>
-                    <Button
-                    className={classes.btnSm}
-                    variant="contained"
-                    color="primary"
-                    startIcon={<AddCircleOutlineIcon fontSize="small" />}
-                    component={Link}
-                    to="/organizations/add"
-                    >
-                    Добавить
-                  </Button>
-                </div>
-              )}
-          </div>
-      </Grid>
+      
    </div>
     </Box>
     

@@ -18,7 +18,7 @@ import useAxios from 'axios-hooks';
 const useStyles = makeStyles((theme) => ({
   root: {  
     flexGrow: 1,
-    backgroundColor: '#ebeded',
+    backgroundColor: '#000000',
     maxWidth:'1920px',
   },
   backColor: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    color: '#dbdbdb',
+    color: '#000000',
     position: 'absolute',
     bottom: '10px',
     padding: theme.spacing(5, 1, 1, 2),
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     //   },
   },
   drawerPaper: {
-    backgroundColor: '#2d122b',
+    backgroundColor: '#F8F8F8',
     width: 250,
   },
   menuButton: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color:'#dbdbdb'
+    color:'#000000'
   },
 }));
 
@@ -104,7 +104,7 @@ export default function DrawerMenu({ open, toggleDrawer, menuItems }) {
                     {currentUserData?.firstName.charAt(0)}{' '}
                   </Avatar>
 
-                  <Typography style={{color:'#dbdbdb'}}> {currentUserData?.name} </Typography>
+                  <Typography style={{color:'#000000'}}> {currentUserData?.name} </Typography>
                 </IconButton>
               </div>
             )}
@@ -117,11 +117,11 @@ export default function DrawerMenu({ open, toggleDrawer, menuItems }) {
                     onClick={() => toggleDrawer()}
                     button
                     className={classes.nested}
-                    style={{ color: '#dbdbdb' }}
+                    style={{ color: '#000000' }}
                     component={Link}
                     to={item.link}
                   >
-                    <ListItemIcon style={{ color: '#dbdbdb' }}>
+                    <ListItemIcon style={{ color: '#000000' }}>
                       {item.icon}
                     </ListItemIcon>
                     <ListItemText primary={item.name} />
@@ -132,7 +132,7 @@ export default function DrawerMenu({ open, toggleDrawer, menuItems }) {
             <Divider />
           </List>
           <Button className={classes.btn} onClick={onLogout}>
-            <ExitToAppIcon style={{ color: '#dbdbdb', marginLeft: '0' }} /> Выход
+            <ExitToAppIcon style={{ color: '#000000', marginLeft: '0' }} /> Выход
           </Button>
         </Drawer>
       </div>

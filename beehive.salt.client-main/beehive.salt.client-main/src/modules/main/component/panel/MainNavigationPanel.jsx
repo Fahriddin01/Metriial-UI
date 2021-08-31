@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   usrName: {
     margin: theme.spacing(0, 3, 0, 1),
     fontSize: '20px',
-    color: '#bdbdbd',
+    color: '#000000',
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(0, 3, 0, 1),
     },
@@ -72,9 +72,10 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     minHeight:750,
-    backgroundColor: '#2d122b',
+    position:'fixed',
+    backgroundColor: '#F8F8F8',
     width: drawerWidth,
-    position:'static',  
+    
   },
   list: {
     padding: theme.spacing(3, 3, 3, 7),
@@ -89,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   btn: {
-    color: '#bdbdbd', 
+    color: '#000000', 
     padding: theme.spacing(5, 8, 5, 7),
     
     justifyContent:'left',
@@ -232,7 +233,7 @@ export default function MainNavigationPanel({ drawerOpen, toggleDrawer }) {
 
           <Divider />
           <List component="div" disablePadding className={classes.divideTop}
-          style={{ borderBottom : '1px solid #bdbdbd',borderTop : '1px solid #bdbdbd'}} >
+          style={{ borderBottom : '1px solid #000000',borderTop : '1px solid #000000'}} >
             {userMenuItems.map((item) => {
               return (
                 <div key={item.name}>
@@ -240,13 +241,13 @@ export default function MainNavigationPanel({ drawerOpen, toggleDrawer }) {
                     className={classes.list}
                     button
                     style={{
-                      color: '#bdbdbd',
+                      color: '#000000',
                       backgroundColor: '',
                     }}
                     component={Link}
                     to={item.link}
                   >
-                    <ListItemIcon style={{ color: '#bdbdbd' }}>
+                    <ListItemIcon style={{ color: '#000000' }}>
                       {item.icon}
                     </ListItemIcon>
                     <ListItemText primary={item.name} />
@@ -297,7 +298,7 @@ export default function MainNavigationPanel({ drawerOpen, toggleDrawer }) {
           >
             {drawer}
             <Button className={classes.btn} onClick={onLogout}>
-              <ExitToAppIcon style={{ color: '#bdbdbd', marginRight:'26px' }} /> Выход
+              <ExitToAppIcon style={{ color: '#000000', marginRight:'26px' }} /> Выход
             </Button>
           </Drawer>
         </Hidden>

@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '62px',
     width: '100%',
+    fontSize:'20px',
   },
 
   notchedOutline: {
@@ -32,8 +33,8 @@ function Select(props) {
         value={value}
         onChange={onChange}
         // className={classes.root}
-        inputProps={{ style: { fontSize: 50 } }} // font size of input text
-        InputLabelProps={{ style: { fontSize: 50 } }} // font size of input label
+       style= {{ fontSize: '20px' }} // font size of input text
+       // font size of input label
       >
         {/* <MenuItem value="">--------------</MenuItem> */}
         {options.map((item) => (

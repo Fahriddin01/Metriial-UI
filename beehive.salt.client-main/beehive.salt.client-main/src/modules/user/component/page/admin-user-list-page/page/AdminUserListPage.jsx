@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbar: {
+    marginBottom:'20px',
     [theme.breakpoints.down('md')]: {
   
     },
@@ -96,9 +97,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
+
+    justifyContent:'flex-end',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-     
+      justifyContent:'end',
     },
     [theme.breakpoints.up('lg')]: {
   
@@ -132,6 +135,9 @@ const useStyles = makeStyles((theme) => ({
   uRow:{
     paddingTop:'20px',
     paddingLeft:'70px',
+    [theme.breakpoints.down('lg')]: {
+      paddingLeft:'20px',
+    },
   },
 }));
 
@@ -252,27 +258,7 @@ export default function AdminUserListPage() {
                       />
                     ) : null}
                   </Grid>
-                  <Grid item xs={6}>
-                    <div>
-                      {user
-                        ? (user.role === 'supervisorAdmin' ||
-                            user.role === 'mainAdmin') && (
-                            <div>
-                              <Button
-                                className={classes.btnSm}
-                                variant="contained"
-                                color="primary"
-                                startIcon={<AddCircleOutlineIcon fontSize="small" />}
-                                component={Link}
-                                to="/users/add"
-                              >
-                                Добавить
-                              </Button>
-                            </div>
-                          )
-                        : null}
-                    </div>
-                  </Grid>
+                  
                 </Grid>
               </Hidden>
               <Hidden only={['sm', 'xs']}>
@@ -299,7 +285,27 @@ export default function AdminUserListPage() {
                   
                 </Grid>
               </Hidden>
-             
+             <Grid container className={classes.btn} spacing={4}>
+                    <Grid item xs={6} sm={6} md={6} lg={6}>
+                      {user
+                        ? (user.role === 'supervisorAdmin' ||
+                            user.role === 'mainAdmin') && (
+                            <div>
+                              <Button
+                                className={classes.btnColor}
+                                variant="contained"
+                                color="primary"
+                                startIcon={<AddCircleOutlineIcon fontSize="small" />}
+                                component={Link}
+                                to="/users/add"
+                              >
+                                Добавить
+                              </Button>
+                            </div>
+                          )
+                        : null}
+                    </Grid>
+                  </Grid>
             </Toolbar>
 
             <DataGrid
@@ -333,27 +339,7 @@ export default function AdminUserListPage() {
     </Grid>
       </Box>  
     <div style={{marginTop:'90px'}}>
-    <Grid container className={classes.btn} spacing={4}>
-                    <Grid item xs={6} sm={6} md={6} lg={6}>
-                      {user
-                        ? (user.role === 'supervisorAdmin' ||
-                            user.role === 'mainAdmin') && (
-                            <div>
-                              <Button
-                                className={classes.btnColor}
-                                variant="contained"
-                                color="primary"
-                                startIcon={<AddCircleOutlineIcon fontSize="small" />}
-                                component={Link}
-                                to="/users/add"
-                              >
-                                Добавить
-                              </Button>
-                            </div>
-                          )
-                        : null}
-                    </Grid>
-                  </Grid>
+    
     </div>      
     </Box>
     

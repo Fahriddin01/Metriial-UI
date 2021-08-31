@@ -14,18 +14,19 @@ const FileScreenModalLoadable = React.lazy(() =>
 const useStyles = makeStyles((theme) => ({
   paper: {
     [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(12, 1, 1, 0),
+  
       width: '100%',
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
-      position: 'fixed',
+    
       left: '410px',
       top: '175px',
       right: '200px',
     },
   },
   card: {
+    marginTop:'20px',
     backgroundColor: '#ebeded',
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(1, 1, 2, 1),
@@ -33,12 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
-      position: 'fixed',
-      left: '420px',
-      top: '240px',
-      right: '200px',
-      width: '40%',
-      height: '60%',
+    
     },
     // width: '652px',
     // height: '410px',
@@ -47,6 +43,10 @@ const useStyles = makeStyles((theme) => ({
     // flexDirection: 'column',
     // alignItems: 'center',
   },
+  CvBox:{
+    paddingLeft:'70px',
+    paddingTop:'40px',
+  }
 }));
 
 export default function ComplainViewPage() {
@@ -75,14 +75,14 @@ export default function ComplainViewPage() {
 
   // -- render --
   return (
-    <Grid xs={12} container alignItems="center" spacing={2}>
+    <Grid xs={12} container alignItems="center" spacing={2} className={classes.CvBox}>
       <CssBaseline />
-      <Grid item xs={12} sm={10} md={8}>
+      <Grid item xs={12} sm={10} md={8} >
         <div>
           <div className={classes.paper}>
-            <Grid item xs={12} sm={10} md={12}>
+            <Grid item xs={12} sm={10} md={12} >
               <Controls.Button
-                style={{ marginLeft: '10px' }}
+               
                 text="Жалобы"
                 variant="outlined"
                 color="12"
