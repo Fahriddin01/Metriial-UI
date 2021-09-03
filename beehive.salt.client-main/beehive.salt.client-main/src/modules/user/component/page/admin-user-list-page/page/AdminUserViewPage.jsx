@@ -8,16 +8,13 @@ import ArrowBackRoundedIcon from '@material-ui/icons/ArrowBackRounded';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+      margin: theme.spacing(4, 0, 4, 0),
     [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(12, 1, 1, 0),
       width: '100%',
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
-      position: 'fixed',
-      left: '405px',
-      top: '175px',
-      right: '200px',
+    
     },
   },
   card: {
@@ -28,14 +25,17 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
-      position: 'fixed',
-      left: '415px',
-      top: '240px',
-      right: '200px',
-      width: '40%',
-      height: '55%',
+     
     },
   },
+  UvRow : {
+    paddingLeft:'70px',
+      width: '100%',
+  [theme.breakpoints.down('md')]: {
+    paddingLeft:'20px',
+    },
+  },
+
 }));
 
 export default function AdminUserViewPage() {
@@ -64,11 +64,12 @@ export default function AdminUserViewPage() {
   return (
     <Grid xs={12} container alignItems="center" spacing={2} column>
       <CssBaseline />
-      <Grid item xs={12} sm={12} md={12}>
+      <div className={classes.UvRow}>
+          <Grid item xs={12} sm={12} md={12} >
         <div className={classes.paper}>
-          <Grid item xs={12} sm={10} md={12}>
+          <Grid item xs={12} sm={10} md={12} >
             <Controls.Button
-              style={{ marginLeft: '10px' }}
+              style={{ marginTop: '20px', marginBotton:'15px' }}
               text="Пользователи"
               variant="outlined"
               color="12"
@@ -78,7 +79,7 @@ export default function AdminUserViewPage() {
             ></Controls.Button>
           </Grid>
         </div>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} >
           <Grid item xs={12} sm={12} md={6}>
             {' '}
             <Card className={classes.card}>
@@ -211,6 +212,8 @@ export default function AdminUserViewPage() {
         )  ?
         <Redirect to="/"/> : null
       }
+      </div>
+    
     </Grid>
 
     // <Grid container direction="column">

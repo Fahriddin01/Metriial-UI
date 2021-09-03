@@ -32,6 +32,9 @@ export function useForm(initialValues, validateOnChange = false, validate) {
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: '100px',
+     [theme.breakpoints.down('sm')]: {
+       marginTop: '30px',
+    },
     // marginTop: theme.spacing(1),
     '& .MuiFormControl-root': {
       width: '100%',

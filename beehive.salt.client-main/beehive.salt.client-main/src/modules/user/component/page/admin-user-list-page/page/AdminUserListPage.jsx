@@ -69,7 +69,7 @@ const columns = [
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('sm')]: {
-      width: '110%',
+      width: '100%',
      
     },
     '& .super-app-theme--header': {
@@ -102,6 +102,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '100%',
       justifyContent:'end',
+    },
+    [theme.breakpoints.down('xs')]: {
+     
+      justifyContent:'flex-start',
     },
     [theme.breakpoints.up('lg')]: {
   

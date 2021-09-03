@@ -96,23 +96,19 @@ const columns = [
 const useStyles = makeStyles((theme) => ({
   btnColor: {
     height: '50px',
-    
     [theme.breakpoints.down('sm')]: {
-      height: '50px',
-     
+      height: '50px', 
     },
   },
   btnSm: {
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '4px',
+      marginRight: '15px',
       height: '50px',
-
     },
   },
   fltrSm: {
     [theme.breakpoints.down('sm')]: {
-      width: '10%',
-     
+      
     },
   },
   btnExp: {
@@ -120,38 +116,36 @@ const useStyles = makeStyles((theme) => ({
     width: '180px',
     [theme.breakpoints.down('sm')]: {
       height: '50px',
-   
     },
   },
   btn: {
     maxWidth:'350px',
     marginLeft:'auto',
     [theme.breakpoints.down('sm')]: {
-      width: '184px',
-   
+    marginBotton:'10px',
+    maxWidth:'380px',
+    marginLeft:'auto',
     },
     [theme.breakpoints.up('lg')]: {
-    
-     
+
     },
   },
   toolbar: {
+
     [theme.breakpoints.down('sm')]: {
-     
-      
+      marginBottom:'15px',    
     },
  
   
   },
   fltr: {
     [theme.breakpoints.down('sm')]: {
-      width: '10%',
-   
+      width: '80%',
     },
   },
 
   root: {
-    height: '10%',
+    height: '80%',
     [theme.breakpoints.down('sm')]: {
   
       height: '10vh',
@@ -412,7 +406,7 @@ export default function ResponsiveDrawer(props) {
             <Toolbar className={classes.toolbar}>
               <Hidden only={['md', 'lg', 'xl']}>
                 <Grid container justifyContent='space-between'>
-                  <Grid item xs={6}>
+                  <Grid item xs={8} md={4} sm={6}>
                     <Button
                       className={classes.fltrSm}
                       startIcon={
@@ -433,7 +427,7 @@ export default function ResponsiveDrawer(props) {
                       />
                     ) : null}
                   </Grid>
-                  <Grid item xs={12} style={{display:'flex',justifyContent:'justify-content'}}>
+                  <Grid item xs={6} style={{display:'flex'}}>
                     <div>
                       {(user.role === 'client' || user.role === 'clientAdmin') && (
                         <Button
@@ -448,7 +442,7 @@ export default function ResponsiveDrawer(props) {
                         </Button>
                       )}
                     </div>
-                    <Grid item xs={3} sm={3} md={3} lg={6}>
+                    <Grid item xs={8} sm={3} md={3} lg={6} style = {{marginLeft:'auto',marginRight:'30px'}}>
                       {/* <Hidden only={['sm', 'xs']}> */}
                       <Button
                         className={classes.btnColor}
@@ -487,7 +481,7 @@ export default function ResponsiveDrawer(props) {
                     />
                   ) : null}
 
-                  <Grid container className={classes.btn} spacing={4} maxWidth='500px'>
+                  <Grid container className={classes.btn} spacing={4} >
                     <Grid item xs={6} sm={6} md={6} lg={6}>
                       {(user.role === 'client' || user.role === 'clientAdmin') && (
                         <Button

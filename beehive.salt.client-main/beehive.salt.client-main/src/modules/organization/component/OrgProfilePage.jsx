@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     marginBottom: '-70px',
-    width: '102%',
+    width: '100%',
     [theme.breakpoints.down('md')]: {
       width: '102%',
     },
@@ -67,17 +67,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    
-    [theme.breakpoints.up('lg')]: {
-      flexDirection: 'column',   
-      top: '120px',
-      width: '20%',
-      // right: '160px',
-    },
-  
+    paddingLeft:'30px',
     [theme.breakpoints.down('md')]: {
       textAlign:'center',
-      padding:'center',
+      padding:'10px',
       width: '100%',
     },
      [theme.breakpoints.down('sm')]: {

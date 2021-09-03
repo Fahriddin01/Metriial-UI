@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       maxWidth: '100%',
       paddingLeft:'0',
+       marginTop:'40px',
     },
      [theme.breakpoints.down('md')]: {
       paddingLeft:'0',

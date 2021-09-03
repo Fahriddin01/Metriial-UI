@@ -13,17 +13,13 @@ const FileScreenModalLoadable = React.lazy(() =>
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(12, 1, 1, 0),
-      width: '100%',
+    paddingTop:'20px',
+    marginBottom:'20px',
+    [theme.breakpoints.down('md')]: { 
+    width: '100%',
+ 
     },
-    [theme.breakpoints.up('lg')]: {
-      flexDirection: 'column',
     
-      left: '410px',
-      top: '175px',
-      right: '200px',
-    },
   },
   card: {
     backgroundColor: '#ebeded',
@@ -32,14 +28,16 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
     [theme.breakpoints.up('lg')]: {
-      flexDirection: 'column',
-    
-      left: '420px',
-      top: '240px',
-      right: '200px',
-      width: '40%',
-      height: '60%',
+      
     },
+  },
+  RvRow: {
+    width: '100%',
+    paddingLeft:'70px',
+    [theme.breakpoints.down('md')]: { 
+      paddingLeft:'20px',
+    },
+    
   },
 }));
 
@@ -70,11 +68,12 @@ export default function AdminOrgViewPage() {
   return (
     <Grid xs={12} container alignItems="center" spacing={2} column>
       <CssBaseline />
-      <Grid item xs={12} sm={12} md={12}>
+      <div  className={classes.RvRow}>
+           <Grid item xs={12} sm={12} md={12}>
         <div className={classes.paper}>
           <Grid item xs={12} sm={10} md={12}>
             <Controls.Button
-              style={{ marginLeft: '10px' }}
+              
               text="Организации"
               variant="outlined"
               color="12"
@@ -84,7 +83,7 @@ export default function AdminOrgViewPage() {
             ></Controls.Button>
           </Grid>
         </div>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} >
           <Grid item xs={12} sm={12} md={6}>
             {' '}
             <Card className={classes.card}>
@@ -237,6 +236,7 @@ export default function AdminOrgViewPage() {
         ) ?
         <Redirect to="/"/> : null
       }
+      </div> 
     </Grid>
 
     // <Grid container direction="column">

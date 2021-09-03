@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     height: '80vh',
     paddingLeft:'70px',
     justifyContent:'space-between',
-     [theme.breakpoints.down('lg')]: {
+     [theme.breakpoints.down('md')]: {
       paddingLeft:'20px',
     },
     // position: 'fixed',
@@ -63,23 +63,23 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btnColor: {
-    marginLeft: '1px',
+    marginRight: '20px',
     height: '50px',
     width: '180px',
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(1, 1, 2, 1),
       height: '50px',
-      width: '160px',
+      width: '135px',
     },
   },
   btnColor1: {
-    marginLeft: '1px',
+   marginRight: '20px',
     height: '50px',
     width: '180px',
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(1, 1, 2, 1),
       height: '50px',
-      width: '160px',
+      width: '135px',
     },
   },
   paper1: {
@@ -812,7 +812,7 @@ export default function ReportAddEditForm() {
               </div>
             )}
             <Grid container spacing={0} className={classes.btn}>
-              <Grid item xs={6} sm={4} md={4} lg={4}>
+              <Grid item xs={6} sm={6} md={6} lg={6}>
                 {' '}
                 {id ? (
                   <>
@@ -854,7 +854,7 @@ export default function ReportAddEditForm() {
                   </Controls.Button>
                 )}
               </Grid>
-              <Grid item xs={6} sm={4} md={4} lg={4}>
+              <Grid item xs={6} sm={6} md={6} lg={6}>
                 <Controls.Button
                   className={classes.btnColor1}
                   startIcon={<ClearIcon fontSize="small" />}

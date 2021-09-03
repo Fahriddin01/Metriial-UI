@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
   leftBar:{
     maxWidth:1580,
-    width:'100%',
+    width:'97%',
     [theme.breakpoints.down('lg')]: {
     maxWidth:'xl',
     

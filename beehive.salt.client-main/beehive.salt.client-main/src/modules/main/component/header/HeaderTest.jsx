@@ -33,9 +33,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: `36px`,
 
     [theme.breakpoints.down('md')]: {
-      //position: 'fixed',
-      // marginLeft: `calc(${breadcrumbWidthM}px)`,
-   
+      marginLeft: `10px`,
     },
   },
   menuButton: {
@@ -59,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
+  
     marginLeft: drawerWidth,
 
     transition: theme.transitions.create(['margin', 'width'], {

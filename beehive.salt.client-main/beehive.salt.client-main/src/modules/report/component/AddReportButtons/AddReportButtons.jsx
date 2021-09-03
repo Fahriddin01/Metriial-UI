@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    alignItems:'end',
+    alignItems:'start',
     height: '345px',
     width: '100%',
     // padding: theme.spacing(1),
@@ -58,7 +58,7 @@ export default function AddReportButtons() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} style={{width:'100%'}}>
         <Grid item xs={12} sm={6}>
           <Button
             className={classes.paper}

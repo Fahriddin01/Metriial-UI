@@ -20,9 +20,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
     
-      left: '410px',
-      top: '175px',
-      right: '200px',
+    
     },
   },
   card: {
@@ -46,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
   CvBox:{
     paddingLeft:'70px',
     paddingTop:'40px',
+    [theme.breakpoints.down('md')]: {
+       paddingLeft:'20px',
+    },
   }
 }));
 
@@ -77,7 +78,7 @@ export default function ComplainViewPage() {
   return (
     <Grid xs={12} container alignItems="center" spacing={2} className={classes.CvBox}>
       <CssBaseline />
-      <Grid item xs={12} sm={10} md={8} >
+      <Grid item xs={12} sm={12} md={8} >
         <div>
           <div className={classes.paper}>
             <Grid item xs={12} sm={10} md={12} >

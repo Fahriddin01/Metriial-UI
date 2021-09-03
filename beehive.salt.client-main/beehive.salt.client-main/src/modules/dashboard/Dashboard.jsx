@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     [theme.breakpoints.down('sm')]: {
-      margin: theme.spacing(5, 0, 18, 2),
+   
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column',
@@ -39,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: 14,
+     [theme.breakpoints.down('sm')]: {
+      fontSize: 10,
+      marginLeft: '-10px',
+    },
   },
   column: {
     marginTop: 15,
@@ -50,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   card2: {
     width: 275,
     minHeight: 125,
-    marginBottom: 25,
+  
   },
   graphic: {
     display: 'flex',
@@ -61,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '20px',
     paddingLeft:'70px',
     [theme.breakpoints.down('sm')]: {
-     paddingLeft:'30px',
+     paddingLeft:'20px',
     }
   
   }

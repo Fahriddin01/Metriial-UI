@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     
     [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(1, -1, 2, 1.5),
+    
       width: '90%',
     },
     [theme.breakpoints.up('lg')]: {
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(1, 2, 2, 1),
       height: '50px',
-      width: '165px',
+      width: '145px',
     },
   },
   textC: {

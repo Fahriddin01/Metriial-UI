@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     [theme.breakpoints.down('sm')]: {
       height: '50px',
-      width: '160px',
+      width: '145px',
     },
   },
   toolbar: {
@@ -101,16 +101,14 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       margin: theme.spacing(-3, 1, 1, 1),
-      
       fontSize: '18px',
-     
       width: '420px',
     },
   },
   fltr: {
     [theme.breakpoints.down('sm')]: {
       width: '10%',
-      margin: theme.spacing(1, -1, -10, 4),
+   
     },
   },
   paper: {
@@ -126,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   tRow :{
     paddingLeft:'70px',
      [theme.breakpoints.down('md')]: {
-      padding:'20px',
+      paddingLeft:'20px',
     },
   },
 }));
